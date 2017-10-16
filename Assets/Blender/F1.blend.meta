@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 501c938f4e4df65478aebfa6561d2944
+timeCreated: 1507330151
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cylinder
+    100004: Cylinder_001
+    100006: Cube
+    100008: Floor
+    100010: Walls
+    100012: Door_1
+    100014: VoltNode
+    100016: Door_2
+    100018: VoltNode_001
+    100020: Wall1
+    100022: Wall2
+    100024: Skydeck
+    100026: Voodoo_Room
+    100028: Voodoo_Cube
+    400000: //RootNode
+    400002: Cylinder
+    400004: Cylinder_001
+    400006: Cube
+    400008: Floor
+    400010: Walls
+    400012: Door_1
+    400014: VoltNode
+    400016: Door_2
+    400018: VoltNode_001
+    400020: Wall1
+    400022: Wall2
+    400024: Skydeck
+    400026: Voodoo_Room
+    400028: Voodoo_Cube
+    2300000: //RootNode
+    2300002: Cylinder
+    2300004: Cylinder_001
+    2300006: Cube
+    2300008: Floor
+    2300010: Walls
+    2300012: Door_1
+    2300014: VoltNode
+    2300016: Door_2
+    2300018: VoltNode_001
+    2300020: Wall1
+    2300022: Wall2
+    2300024: Skydeck
+    2300026: Voodoo_Room
+    2300028: Voodoo_Cube
+    3300000: //RootNode
+    3300002: Cylinder
+    3300004: Cylinder_001
+    3300006: Cube
+    3300008: Floor
+    3300010: Walls
+    3300012: Door_1
+    3300014: VoltNode
+    3300016: Door_2
+    3300018: VoltNode_001
+    3300020: Wall1
+    3300022: Wall2
+    3300024: Skydeck
+    3300026: Voodoo_Room
+    3300028: Voodoo_Cube
+    4300000: Cube
+    4300002: Cylinder
+    4300004: Cylinder_001
+    4300006: Floor
+    4300008: Walls
+    4300010: Door_1
+    4300012: VoltNode
+    4300014: Door_2
+    4300016: VoltNode_001
+    4300018: Wall1
+    4300020: Wall2
+    4300022: Voodoo_Room
+    4300024: Skydeck
+    4300026: Voodoo_Cube
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
