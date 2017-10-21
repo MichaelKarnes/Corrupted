@@ -1,53 +1,15 @@
 fileFormatVersion: 2
-guid: 85082db5671552144a004ef4a13db743
-timeCreated: 1507341134
+guid: 30f8005b6849c734c87a766b608b0e9f
+timeCreated: 1508370794
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Blaster
-    100004: Icosphere
-    100006: Blaster_Volt_Storage
-    100008: Cube
-    100010: Cylinder
-    100012: ExitPoint
-    100014: DischargePoint
-    100016: Gun
-    100018: Trigger
     400000: //RootNode
-    400002: Blaster
-    400004: Icosphere
-    400006: Blaster_Volt_Storage
-    400008: Cube
-    400010: Cylinder
-    400012: ExitPoint
-    400014: DischargePoint
-    400016: Gun
-    400018: Trigger
     2300000: //RootNode
-    2300002: Blaster
-    2300004: Icosphere
-    2300006: Blaster_Volt_Storage
-    2300008: Cube
-    2300010: Cylinder
-    2300012: Gun
-    2300014: Trigger
     3300000: //RootNode
-    3300002: Blaster
-    3300004: Icosphere
-    3300006: Blaster_Volt_Storage
-    3300008: Cube
-    3300010: Cylinder
-    3300012: Gun
-    3300014: Trigger
-    4300000: Cube
-    4300002: Blaster
-    4300004: Icosphere
-    4300006: Blaster_Volt_Storage
-    4300008: Cylinder
-    4300010: Gun
-    4300012: Trigger
+    4300000: Cylinder
     7400000: Default Take
     9500000: //RootNode
   materials:

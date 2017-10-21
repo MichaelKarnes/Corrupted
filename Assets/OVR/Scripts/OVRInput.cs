@@ -236,6 +236,21 @@ public static class OVRInput
 		All                       = OVRPlugin.Controller.All,            ///< Represents the logical OR of all controllers.
 	}
 
+	/// <summary>
+	/// Struct representing the frequency and amplitude of a controller vibration. Expected values range from 0 to 1.
+	/// </summary>
+	public struct Vibration
+	{
+		public float Frequency;
+		public float Amplitude;
+
+		public Vibration(float frequency, float amplitude)
+		{
+			Frequency = frequency;
+			Amplitude = amplitude;
+		}
+	}
+
 	private static readonly float AXIS_AS_BUTTON_THRESHOLD = 0.5f;
 	private static readonly float AXIS_DEADZONE_THRESHOLD = 0.2f;
 	private static List<OVRControllerBase> controllers;
@@ -1115,7 +1130,7 @@ public static class OVRInput
 	/// Activates vibration with the given frequency and amplitude with the given controller mask.
 	/// Ignored on controllers that do not support vibration. Expected values range from 0 to 1.
 	/// </summary>
-	public static void SetControllerVibration(float frequency, float amplitude, Controller controllerMask = Controller.Active)
+	public static void SetControllerVibration(Vibration vibration, Controller controllerMask = Controller.Active)
 	{
 		if ((controllerMask & Controller.Active) != 0)
 			controllerMask |= activeControllerType;
@@ -1126,9 +1141,18 @@ public static class OVRInput
 
 			if (ShouldResolveController(controller.controllerType, controllerMask))
 			{
-				controller.SetControllerVibration(frequency, amplitude);
+				controller.SetControllerVibration(vibration.Frequency, vibration.Amplitude);
 			}
 		}
+	}
+
+	/// <summary>
+	/// Activates vibration with the given frequency and amplitude with the given controller mask.
+	/// Ignored on controllers that do not support vibration. Expected values range from 0 to 1.
+	/// </summary>
+	public static void SetControllerVibration(float frequency, float amplitude, Controller controllerMask = Controller.Active)
+	{
+		SetControllerVibration(new Vibration(frequency, amplitude));
 	}
 
 	/// <summary>

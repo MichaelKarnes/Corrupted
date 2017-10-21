@@ -114,10 +114,17 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
-    <Compile Include="Assets\Scripts\Looking Glass\StaticLookingGlass.cs" />
+    <Compile Include="Assets\Scripts\Blaster.cs" />
     <Compile Include="Assets\Scripts\Looking Glass\LookingGlass.cs" />
+    <Compile Include="Assets\Scripts\Looking Glass\StaticLookingGlass.cs" />
+    <Compile Include="Assets\Scripts\Spawnable.cs" />
+    <Compile Include="Assets\Scripts\Target.cs" />
+    <Compile Include="Assets\Scripts\TargetZone.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Assets\Shaders\LightOutlines.shader" />
+    <None Include="Assets\Shaders\UIOverlay.shader" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>
