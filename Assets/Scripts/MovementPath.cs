@@ -10,25 +10,70 @@ public class MovementPath : MonoBehaviour {
 	public bool Loop;
 	public float Speed;
 
-	private List<Vector3> NodesWorld = new List<Vector3>();
-	private int currentNodeIndex = 0;
-
-	// Use this for initialization
-	void Start () {
-		if (Nodes.Count > 0)
-			NodesWorld.Add(transform.position);
-
-		foreach(Vector3 node in Nodes)
-			NodesWorld.Add(UseWorldSpace ? node : transform.TransformPoint(node));
-
-		if (Nodes.Count > 0)
-			OnEndPath();
-		else
-			Debug.Log("There must be at least one Node in the MovementPath");
-	}
+	private List<Vector3> nodesWorld;
+	private List<MovementInstruction> movementInstructions;
+	private int currentNodeIndex;
 	
 	// Update is called once per frame
 	void Update () {
+	}
+
+	void Start()
+	{
+		Reset();
+	}
+
+	public void Reset()
+	{
+		nodesWorld = new List<Vector3>();
+		movementInstructions = new List<MovementInstruction>();
+		currentNodeIndex = 0;
+
+		if (Nodes.Count > 0)
+			nodesWorld.Add(transform.position);
+
+		foreach (Vector3 node in Nodes)
+			nodesWorld.Add(UseWorldSpace ? node : transform.TransformPoint(node));
+
+		if (Nodes.Count > 0)
+		{
+			foreach (Vector3 node in nodesWorld)
+			{
+				UnityEvent instructionOnEnd = new UnityEvent();
+				instructionOnEnd.AddListener(OnEndPath);
+
+				MovementInstruction currentInstruction = gameObject.AddComponent<MovementInstruction>();
+				currentInstruction.Destination = node;
+				currentInstruction.UseWorldSpace = true;
+				currentInstruction.Speed = Speed;
+				currentInstruction.OnEnd = instructionOnEnd;
+				currentInstruction.enabled = false;
+
+				movementInstructions.Add(currentInstruction);
+			}
+
+			OnEndPath();
+		}
+		else
+			Debug.Log("There must be at least one Node in the MovementPath");
+	}
+
+	private void OnEnable()
+	{
+		if(movementInstructions != null && movementInstructions.Count > currentNodeIndex)
+			movementInstructions[currentNodeIndex].enabled = true;
+	}
+
+	private void OnDisable()
+	{
+		foreach (MovementInstruction instruction in movementInstructions)
+			instruction.enabled = false;
+	}
+
+	private void OnDestroy()
+	{
+		foreach (MovementInstruction instruction in movementInstructions)
+			Destroy(instruction);
 	}
 
 	private void OnEndPath()
@@ -36,18 +81,11 @@ public class MovementPath : MonoBehaviour {
 		currentNodeIndex++;
 
 		if (Loop)
-			currentNodeIndex %= NodesWorld.Count;
+			currentNodeIndex %= nodesWorld.Count;
 
-		if (currentNodeIndex < NodesWorld.Count)
+		if (currentNodeIndex < nodesWorld.Count)
 		{
-			UnityEvent instructionOnEnd = new UnityEvent();
-			instructionOnEnd.AddListener(OnEndPath);
-
-			MovementInstruction currentInstruction = gameObject.AddComponent<MovementInstruction>();
-			currentInstruction.Destination = NodesWorld[currentNodeIndex];
-			currentInstruction.UseWorldSpace = true;
-			currentInstruction.Speed = Speed;
-			currentInstruction.OnEnd = instructionOnEnd;
+			movementInstructions[currentNodeIndex].enabled = true;
 		}
 	}
 

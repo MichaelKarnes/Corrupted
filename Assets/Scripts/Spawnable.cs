@@ -10,13 +10,16 @@ public partial class Spawnable : MonoBehaviour
 {
 	public UnityEvent OnSpawn;
 
+	private Vector3 spawnPos;
+
 	void Start()
 	{
-		
+		spawnPos = transform.position;
 	}
 
 	public void Spawn()
 	{
+		spawnPos = transform.position;
 		OnSpawn.Invoke();
 	}
 
@@ -25,13 +28,18 @@ public partial class Spawnable : MonoBehaviour
 		if (seconds > 0)
 			StartCoroutine(WaitSpawn(seconds));
 		else
-			OnSpawn.Invoke();
+			Spawn();
+	}
+
+	public void GoToSpawnPosition()
+	{
+		transform.position = spawnPos;
 	}
 
 	private IEnumerator WaitSpawn(float seconds)
 	{
 		yield return new WaitForSeconds(seconds);
 
-		OnSpawn.Invoke();
+		Spawn();
 	}
 }
