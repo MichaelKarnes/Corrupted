@@ -117,6 +117,8 @@
     <Compile Include="Assets\Scripts\Blaster.cs" />
     <Compile Include="Assets\Scripts\Looking Glass\LookingGlass.cs" />
     <Compile Include="Assets\Scripts\Looking Glass\StaticLookingGlass.cs" />
+    <Compile Include="Assets\Scripts\MovementPath.cs" />
+    <Compile Include="Assets\Scripts\MovementInstruction.cs" />
     <Compile Include="Assets\Scripts\Spawnable.cs" />
     <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\TargetZone.cs" />
